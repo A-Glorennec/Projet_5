@@ -1,4 +1,4 @@
-// GET ID OF THE PAGE'S PRODUCT
+// Récupération de l'id des produits 
 const params = new URLSearchParams(window.location.search);
 
 const id = params.get('id');
@@ -6,7 +6,7 @@ const id = params.get('id');
 const url = `http://localhost:3000/api/products/${id}`;
 
 
-// NOW GET ITS DATAS BY FETCH REQUEST
+// Fonction pour récupérer les données des produits
 async function getProductDatas() {
     try {
         const response = await fetch(url);
@@ -59,7 +59,7 @@ function addItemToCart (datas)  {
             let quantity = itemQuantity.value;
             let color = itemColor.value;
             let selectedItem = {
-                id: id,
+                _id: id,
                 img: datas.imageUrl,
                 alt: datas.altTxt,
                 description: datas.description,
